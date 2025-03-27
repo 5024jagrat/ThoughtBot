@@ -24,10 +24,10 @@
   } = require("@google/generative-ai");
   
   const MODEL_NAME = "gemini-1.5-pro-latest";
-  const API_KEY = "AIzaSyAI_TYPt_m1aeO8F3wbDyJbg7SjVO-KfEA";
+  const apiKey = process.env.API_KEY;
   
   async function getChatResponse(incomingChatDiv) {
-    const genAI = new GoogleGenerativeAI(API_KEY);
+    const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({ model: MODEL_NAME });
   
     const generationConfig = {
